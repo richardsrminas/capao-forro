@@ -316,10 +316,10 @@ nav.scrolled .nav-logo img{height:45px}
 <section id="reserva" class="booking-sec">
   <h2 class="sec-title reveal">Reserve sua estadia</h2>
   <p class="sec-sub reveal">Escolha suas datas e garanta seu quarto na Serra da Canastra.</p>
-  <form class="booking-form reveal" onsubmit="event.preventDefault();window.open('https://wa.me/5537998736050?text=Olá! Quero reservar.','_blank')">
-    <div class="booking-field"><label>Check-in</label><input type="date" required></div>
-    <div class="booking-field"><label>Check-out</label><input type="date" required></div>
-    <div class="booking-field"><label>Hóspedes</label><select><option>2 adultos</option><option>1 adulto</option><option>3 adultos</option><option>Casal + criança</option></select></div>
+  <form class="booking-form reveal" id="bookingForm" onsubmit="event.preventDefault();var ci=document.getElementById('checkin').value;var co=document.getElementById('checkout').value;var h=document.getElementById('hospedes').value;var msg='Olá! Gostaria de reservar:%0A%0A📅 Check-in: '+ci+'%0A📅 Check-out: '+co+'%0A👥 Hóspedes: '+h+'%0A%0APossuem disponibilidade?';window.open('https://wa.me/5537998736050?text='+msg,'_blank')">
+    <div class="booking-field"><label>Check-in</label><input type="date" id="checkin" required></div>
+    <div class="booking-field"><label>Check-out</label><input type="date" id="checkout" required></div>
+    <div class="booking-field"><label>Hóspedes</label><select id="hospedes"><option>2 adultos</option><option>1 adulto</option><option>3 adultos</option><option>Casal + criança</option></select></div>
     <button type="submit" class="booking-btn">Consultar via WhatsApp</button>
   </form>
   <p class="booking-note reveal">Check-in: 13h · Check-out: 11h · Crianças até 3 anos grátis</p>
